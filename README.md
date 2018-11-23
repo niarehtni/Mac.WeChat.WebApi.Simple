@@ -1,4 +1,4 @@
-# 微信mac协议，webapi版本。
+# 微信mac协议，webapi免IIS部署版本。
  请进入  http://www.keduoduo.online/ 进行注册授权<br/>
 1.解压Release
 2.打开WeChatServer.exe.config
