@@ -10,8 +10,8 @@
     <add key="AdminPassword" value="123456" />
 ```
 <br/>
-4.右键管理员运行 WeChatServer.exe<br/>
-看见  开启服务... 证明服务已经开启
+4.右键管理员运行 WeChatServer.exe
+看见  开启服务... 证明服务已经开启<br/>
 5.在浏览器运行http://localhost:22221/swagger/ 即可查看所有webapi文档。<br/>
 6.微信登录获取二维码需要参考Test.html 中websocket方式创建websocket链接来获取二维码登录。<br/>
 7.在微信成功登录以后，即可通过Http post的方式传入uuid来操作微信了<br/>
