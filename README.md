@@ -1,19 +1,20 @@
 # 微信mac协议，webapi免IIS部署版本。
  请进入  http://www.keduoduo.online/ 进行注册授权<br/>
-1.解压Release
-2.打开WeChatServer.exe.config
-3.配置授权信息，api端口，和websocket端口，管理员密码等参数
+1.解压Release<br/>
+2.打开WeChatServer.exe.config<br/>
+3.配置授权信息，api端口，和websocket端口，管理员密码等参数<br/>
 ```  
     <add key="AuthKey" value="" />
     <add key="WebApiHost" value="22221" />
     <add key="WebSocketHost" value="22222" />
     <add key="AdminPassword" value="123456" />
 ```
-4.右键管理员运行 WeChatServer.exe
+<br/>
+4.右键管理员运行 WeChatServer.exe<br/>
 看见  开启服务... 证明服务已经开启
-5.在浏览器运行http://localhost:22221/swagger/ 即可查看所有webapi文档。
-6.微信登录获取二维码需要参考Test.html 中websocket方式创建websocket链接来获取二维码登录。
-7.在微信成功登录以后，即可通过Http post的方式传入uuid来操作微信了
+5.在浏览器运行http://localhost:22221/swagger/ 即可查看所有webapi文档。<br/>
+6.微信登录获取二维码需要参考Test.html 中websocket方式创建websocket链接来获取二维码登录。<br/>
+7.在微信成功登录以后，即可通过Http post的方式传入uuid来操作微信了<br/>
 
 
 
