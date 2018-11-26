@@ -1,4 +1,4 @@
-1.解压Release
+1.找到res目录
 2.打开WeChatServer.exe.config
 3.配置授权信息，api端口，和websocket端口，管理员密码等参数
     <add key="AuthKey" value="" />
