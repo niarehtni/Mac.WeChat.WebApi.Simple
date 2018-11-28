@@ -4,343 +4,457 @@
         <name>WebApi</name>
     </assembly>
     <members>
-        <member name="T:WebApi.WeChatController">
+        <member name="T:WebApi.Controllers.AutoLoginController">
             <summary>
-            微信模块
+            二次登陆模块
             </summary>
         </member>
-        <member name="M:WebApi.WeChatController.SendText(WebApi.Model.SendTextModel)">
-            <summary>
-            发送文字消息
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SendImg(WebApi.Model.SendImgModel)">
-            <summary>
-            发送图片消息
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SendApp(WebApi.Model.SendAppModel)">
-            <summary>
-            发送链接消息
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SendMass(WebApi.Model.SendMassModel)">
-            <summary>
-            群发消息
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupCreat(WebApi.Model.GroupCreatModel)">
-            <summary>
-            创建群，好友微信id ["wxid_aaa","wxid_bbb"] 必须大于3人且包含自己
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupQuick(WebApi.Model.GroupModel)">
-            <summary>
-            退出群
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupGetMember(WebApi.Model.GroupModel)">
-            <summary>
-            获取群成员资料
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupAddMember(WebApi.Model.GroupUserModel)">
-            <summary>
-            添加群成员 
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupInviteMember(WebApi.Model.GroupUserModel)">
-            <summary>
-            邀请群成员
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupDelMember(WebApi.Model.GroupUserModel)">
-            <summary>
-            踢出群成员
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupUpdateName(WebApi.Model.GroupNameModel)">
-            <summary>
-            修改群名称
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GroupUpdateAnnouncement(WebApi.Model.GroupAnnouncementModel)">
-            <summary>
-            修改群公告
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FansGetNear(WebApi.Model.FansGetNearModel)">
-            <summary>
-            查看附近的人
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FansSearch(WebApi.Model.FansSearchModel)">
-            <summary>
-            搜索用户信息，支持手机号 微信号 qq号
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FansAdd(WebApi.Model.FansAddModel)">
-            <summary>
-            添加粉丝
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.ContactGet(WebApi.Model.ContactModel)">
-            <summary>
-            获取好友详情
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.ContactSetRemark(WebApi.Model.ContactRemarkModel)">
-            <summary>
-            设置好友备注
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.ContactDelete(WebApi.Model.ContactModel)">
-            <summary>
-            删除好友
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.ContactAccept(WebApi.Model.ContactAcceptModel)">
-            <summary>
-            通过好友请求
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsSendText(WebApi.Model.SnsSendTextModel)">
-            <summary>
-            发送文字朋友圈
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsSendImageText(WebApi.Model.SnsSendImageTextModel)">
-            <summary>
-            发送图文朋友圈
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsGetTimeLine(WebApi.Model.SnsModel)">
-            <summary>
-            获取朋友圈，snsid第一次传空，后面传最后一条id进行翻页查看
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsGetUserPage(WebApi.Model.SnsUserModel)">
-            <summary>
-            查看指定好友朋友圈,snsid 第一次传空，后面传最后一条id进行翻页查看
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsObjectDetail(WebApi.Model.SnsModel)">
-            <summary>
-            获取朋友圈详情
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SnsComment(WebApi.Model.SnsComment)">
-            <summary>
-            朋友圈评论
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GhGet(WebApi.Model.GhModel)">
-            <summary>
-            获取公众号内容
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GhFlower(WebApi.Model.GhModel)">
-            <summary>
-            关注公众号
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.GhSearch(WebApi.Model.GhSearchModel)">
-            <summary>
-            搜索公众号
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.SubscriptionCommand(WebApi.Model.GhSubscriptionCommandModel)">
-            <summary>
-            执行公众号菜单
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.RequestUrl(WebApi.Model.GhRequestUrl)">
-            <summary>
-            阅读链接
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.LabelGet(WebApi.Model.BaseModel)">
-            <summary>
-            获取所有标签
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.LabelSet(WebApi.Model.LabelSetModel)">
-            <summary>
-            设置标签
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.LabelAdd(WebApi.Model.LabelAddModel)">
-            <summary>
-            创建标签
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.LabelDelete(WebApi.Model.LabelModel)">
-            <summary>
-            删除标签
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FavSync(WebApi.Model.FavModel)">
-            <summary>
-            同步收藏
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FavAdd(WebApi.Model.FavAddModel)">
-            <summary>
-            添加收藏
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.FavSelect(WebApi.Model.FavSelectModel)">
-            <summary>
-            查看收藏
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.UserSetWxid(WebApi.Model.UserSetWxidModel)">
-            <summary>
-            设置wxid
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.UserSetUserInfo(WebApi.Model.UserSetUserInfoModel)">
-            <summary>
-            设置个人信息
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.WeChatController.Get62(WebApi.Model.BaseModel)">
+        <member name="M:WebApi.Controllers.AutoLoginController.Get62(WebApi.Model.BaseModel)">
             <summary>
             获取62数据（未做base64和 hex解码）
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.GetInfo(WebApi.Model.BaseModel)">
+        <member name="T:WebApi.Controllers.ContactController">
             <summary>
-            获取个人信息
+            好友模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.ContactController.ContactGet(WebApi.Model.ContactModel)">
+            <summary>
+            获取好友详情
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.LogOut(WebApi.Model.BaseModel)">
+        <member name="M:WebApi.Controllers.ContactController.ContactSetRemark(WebApi.Model.ContactRemarkModel)">
             <summary>
-            微信注销
+            设置好友备注
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.GetContact(WebApi.Model.BaseModel)">
+        <member name="M:WebApi.Controllers.ContactController.ContactDelete(WebApi.Model.ContactModel)">
+            <summary>
+            删除好友
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ContactController.ContactAccept(WebApi.Model.ContactAcceptModel)">
+            <summary>
+            通过好友请求
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ContactController.GetContact(WebApi.Model.BaseModel)">
             <summary>
             获取好友列表
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.GetGroup(WebApi.Model.BaseModel)">
+        <member name="M:WebApi.Controllers.ContactController.GetGroup(WebApi.Model.BaseModel)">
             <summary>
             获取群组列表
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.GetGzh(WebApi.Model.BaseModel)">
+        <member name="M:WebApi.Controllers.ContactController.GetGzh(WebApi.Model.BaseModel)">
             <summary>
             获取公众号列表
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.SysGetAllOnline(System.String)">
+        <member name="T:WebApi.Controllers.FansController">
+            <summary>
+            粉丝模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FansController.FansGetNear(WebApi.Model.FansGetNearModel)">
+            <summary>
+            查看附近的人
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.FansController.FansSearch(WebApi.Model.FansSearchModel)">
+            <summary>
+            搜索用户信息，支持手机号 微信号 qq号
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.FansController.FansAdd(WebApi.Model.FansAddModel)">
+            <summary>
+            添加粉丝
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.FansController.FansSayHello(WebApi.Model.FansSayHelloModel)">
+            <summary>
+            添加粉丝
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.FavController">
+            <summary>
+            收藏模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FavController.FavSync(WebApi.Model.FavModel)">
+            <summary>
+            同步收藏
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.FavController.FavAdd(WebApi.Model.FavAddModel)">
+            <summary>
+            添加收藏
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.FavController.FavSelect(WebApi.Model.FavSelectModel)">
+            <summary>
+            查看收藏
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.GhController">
+            <summary>
+            公众号模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.GhController.GhGet(WebApi.Model.GhModel)">
+            <summary>
+            获取公众号内容
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GhController.GhFlower(WebApi.Model.GhModel)">
+            <summary>
+            关注公众号
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GhController.GhSearch(WebApi.Model.GhSearchModel)">
+            <summary>
+            搜索公众号
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GhController.SubscriptionCommand(WebApi.Model.GhSubscriptionCommandModel)">
+            <summary>
+            执行公众号菜单
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GhController.RequestUrl(WebApi.Model.GhRequestUrl)">
+            <summary>
+            阅读链接
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.GroupController">
+            <summary>
+            群模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupCreat(WebApi.Model.GroupCreatModel)">
+            <summary>
+            创建群，好友微信id ["wxid_aaa","wxid_bbb"] 必须大于3人且包含自己
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupQuick(WebApi.Model.GroupModel)">
+            <summary>
+            退出群
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupGetMember(WebApi.Model.GroupModel)">
+            <summary>
+            获取群成员资料
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupAddMember(WebApi.Model.GroupUserModel)">
+            <summary>
+            添加群成员 
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupInviteMember(WebApi.Model.GroupUserModel)">
+            <summary>
+            邀请群成员
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupDelMember(WebApi.Model.GroupUserModel)">
+            <summary>
+            踢出群成员
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupUpdateName(WebApi.Model.GroupNameModel)">
+            <summary>
+            修改群名称
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupUpdateAnnouncement(WebApi.Model.GroupAnnouncementModel)">
+            <summary>
+            修改群公告
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.GroupController.GroupGetQrCode(WebApi.Model.GroupModel)">
+            <summary>
+            获取群二维码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.LabelController">
+            <summary>
+            标签模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.LabelController.LabelGet(WebApi.Model.BaseModel)">
+            <summary>
+            获取所有标签
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.LabelController.LabelSet(WebApi.Model.LabelSetModel)">
+            <summary>
+            设置标签
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.LabelController.LabelAdd(WebApi.Model.LabelAddModel)">
+            <summary>
+            创建标签
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.LabelController.LabelDelete(WebApi.Model.LabelModel)">
+            <summary>
+            删除标签
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.MsgController">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.SendText(WebApi.Model.SendTextModel)">
+            <summary>
+            发送文字消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.SendImg(WebApi.Model.SendImgModel)">
+            <summary>
+            发送图片消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.SendApp(WebApi.Model.SendAppModel)">
+            <summary>
+            发送链接消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.SendShareCard(WebApi.Model.ShardCardModel)">
+            <summary>
+            发送名片消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.SendMass(WebApi.Model.SendMassModel)">
+            <summary>
+            群发消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.GetMsgImg(WebApi.Model.MessageModel)">
+            <summary>
+            获取图片消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.GetMsgVoice(WebApi.Model.MessageModel)">
+            <summary>
+            获取语音消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.MsgController.GetMsgVideo(WebApi.Model.MessageModel)">
+            <summary>
+            获取视频消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.SnsController">
+            <summary>
+            朋友圈模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsSendText(WebApi.Model.SnsSendTextModel)">
+            <summary>
+            发送文字朋友圈
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsSendImageText(WebApi.Model.SnsSendImageTextModel)">
+            <summary>
+            发送图文朋友圈
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsGetTimeLine(WebApi.Model.SnsModel)">
+            <summary>
+            获取朋友圈，snsid第一次传空，后面传最后一条id进行翻页查看
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsGetUserPage(WebApi.Model.SnsUserModel)">
+            <summary>
+            查看指定好友朋友圈,snsid 第一次传空，后面传最后一条id进行翻页查看
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsObjectDetail(WebApi.Model.SnsModel)">
+            <summary>
+            获取朋友圈详情
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsComment(WebApi.Model.SnsComment)">
+            <summary>
+            朋友圈评论
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SnsController.SnsSync(WebApi.Model.SnsSyncModel)">
+            <summary>
+            同步朋友圈动态(好友评论或点赞自己朋友圈的消息)
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.SystemController">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.SysGetAllOnline(System.String)">
             <summary>
             查询所有在线微信
             </summary>
             <param name="password">管理员密码,配置在webconfig中</param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.WeChatController.SysLogOutAll(System.String)">
+        <member name="M:WebApi.Controllers.SystemController.SysLogOutAll(System.String)">
             <summary>
             注销所有在线微信
             </summary>
             <param name="password"></param>
             <returns></returns>
         </member>
+        <member name="T:WebApi.Controllers.UserController">
+            <summary>
+            用户模块
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.UserSetWxid(WebApi.Model.UserSetWxidModel)">
+            <summary>
+            设置wxid
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.UserSetUserInfo(WebApi.Model.UserSetUserInfoModel)">
+            <summary>
+            设置个人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.GetInfo(WebApi.Model.BaseModel)">
+            <summary>
+            获取个人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.LogOut(WebApi.Model.BaseModel)">
+            <summary>
+            微信注销
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="P:WebApi.Model.BaseModel.uuid">
             <summary>
             创建websocket的uuid唯一标识
+            </summary>
+        </member>
+        <member name="T:WebApi.Model.MessageModel">
+            <summary>
+            消息文件实体类
+            </summary>
+        </member>
+        <member name="P:WebApi.Model.MessageModel.uuid">
+            <summary>
+            创建websocket的uuid唯一标识
+            </summary>
+        </member>
+        <member name="P:WebApi.Model.MessageModel.msg">
+            <summary>
+            微信返回的msg结果 传入JSON字符串
             </summary>
         </member>
         <member name="T:WebApi.Model.SendTextModel">
@@ -386,6 +500,11 @@
         <member name="P:WebApi.Model.SendImgModel.base64">
             <summary>
             消息内容
+            </summary>
+        </member>
+        <member name="T:WebApi.Model.ShardCardModel">
+            <summary>
+            名片消息
             </summary>
         </member>
         <member name="T:WebApi.Model.SendAppModel">
@@ -463,6 +582,16 @@
             搜索条件  QQ号 手机号 微信号
             </summary>
         </member>
+        <member name="T:WebApi.Model.FansSayHelloModel">
+            <summary>
+            附近的人打招呼
+            </summary>
+        </member>
+        <member name="T:WebApi.Model.FansAddModel">
+            <summary>
+            添加好友
+            </summary>
+        </member>
         <member name="P:WebApi.Model.FansAddModel.type">
             <summary>
             1   -通过QQ好友添加--可以
@@ -510,6 +639,11 @@
         <member name="P:WebApi.Model.SnsModel.snsid">
             <summary>
             朋友圈id
+            </summary>
+        </member>
+        <member name="P:WebApi.Model.SnsSyncModel.key">
+            <summary>
+            朋友圈key
             </summary>
         </member>
         <member name="P:WebApi.Model.SnsComment.context">
@@ -1013,6 +1147,27 @@
             </summary>
             <param name="msg"></param>
         </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_GetMsgVideo(System.String)">
+            <summary>
+            获取视频消息
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_GetMsgVoice(System.String)">
+            <summary>
+            获取语音消息
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_GetMsgImage(System.String)">
+            <summary>
+            获取图片消息
+            </summary>
+            <param name="wxid"></param>
+            <param name="content"></param>
+        </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SendMsg(System.String,System.String)">
             <summary>
             发消息 -文字
@@ -1114,12 +1269,35 @@
             <param name="content"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_ESetChatroomName(System.String,System.String)">
+            <summary>
+            修改群名称
+            </summary>
+            <param name="groupid"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SetChatroomAnnouncement(System.String,System.String)">
             <summary>
             修改群公告
             </summary>
             <param name="groupid"></param>
             <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_ESetChatroomAnnouncement(System.String,System.String)">
+            <summary>
+            修改群公告
+            </summary>
+            <param name="groupid"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_GetUserQRCode(System.String)">
+            <summary>
+            获取群、好友二维码
+            </summary>
+            <param name="userid"></param>
             <returns></returns>
         </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_GetChatRoomMember(System.String)">
@@ -1153,6 +1331,13 @@
             <param name="content"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SnsSync(System.String)">
+            <summary>
+            同步朋友圈
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SnsObjectOpDeleteComment(System.String,System.Int32)">
             <summary>
             删除评论、点赞
@@ -1180,8 +1365,31 @@
             <summary>
             发朋友圈
             </summary>
-            <param name="wxid"></param>
+            <param name="content">内容</param>
+            <param name="imagelist">图片数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_ESendMoment(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            发朋友圈
+            </summary>
+            <param name="content">内容</param>
+            <param name="imagelist">图片数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SendMoment(System.String)">
+            <summary>
+            发送文字朋友圈
+            </summary>
             <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_ESendMoment(System.String)">
+            <summary>
+            发送文字朋友圈
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
         </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_SnsTimeline(System.String)">
             <summary>
@@ -1321,6 +1529,14 @@
             <param name="context"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_ESayHello(System.String,System.String)">
+            <summary>
+            附近的人打招呼
+            </summary>
+            <param name="v1"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_WebSearch(System.String)">
             <summary>
             公众号搜索
@@ -1368,6 +1584,13 @@
             <returns></returns>
         </member>
         <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_AddContactLabel(System.String)">
+            <summary>
+            创建标签
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WeChat.XzyWeChatThread.Wx_EAddContactLabel(System.String)">
             <summary>
             创建标签
             </summary>
