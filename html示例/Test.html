@@ -12,9 +12,14 @@
         var apihost = "localhost:22221";
         if ("WebSocket" in window) {
             // 打开一个 web socket
-            var ws = new WebSocket("ws://" + host + "/?uuid=" + uuid);
+            //扫码登录
+            var ws = new WebSocket("ws://" + host + "/?action=scan&uuid=" + uuid);
+            //62登录
+            //var username = '';
+            //var password = '';
+            //var str62 = ''
+            //var ws = new WebSocket("ws://" + host + "/?action=62&uuid=" + uuid + "&username=" + username + "&password=" + password + "&str62=" + str62);
             ws.onopen = function () {
-
             };
             ws.onmessage = function (evt) {
                 var msg = JSON.parse( evt.data);
