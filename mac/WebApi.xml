@@ -1063,7 +1063,7 @@
             断线重连定时器
             </summary>
         </member>
-        <member name="M:WebApi.WeChat.XzyWeChatThread.#ctor(Fleck.IWebSocketConnection)">
+        <member name="M:WebApi.WeChat.XzyWeChatThread.#ctor(Fleck.IWebSocketConnection,System.String)">
             <summary>
             初始化，并且使用二维码登录。并且初始化一些计时器，但实际上这些计时器没有什么用。这些计时器，应该是为了实现类似signalr的功能
             </summary>
