@@ -409,6 +409,13 @@
             用户模块
             </summary>
         </member>
+        <member name="M:WebApi.Controllers.UserController.UserLogin62(WebApi.Model.UserLoginModel)">
+            <summary>
+            账号密码+62登录，登录后使用相同的UUID链接websocket也可以再次接收消息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.UserController.UserSetWxid(WebApi.Model.UserSetWxidModel)">
             <summary>
             设置wxid
@@ -539,7 +546,7 @@
         </member>
         <member name="P:WebApi.Model.GroupCreatModel.users">
             <summary>
-            好友wxid ["wxid_aaa","wxid_bbb"]，不小于3人且包含自己
+            好友wxid ，不小于3人且包含自己
             </summary>
         </member>
         <member name="T:WebApi.Model.GroupModel">

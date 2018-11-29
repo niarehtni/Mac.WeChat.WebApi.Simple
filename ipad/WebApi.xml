@@ -539,7 +539,7 @@
         </member>
         <member name="P:WebApi.Model.GroupCreatModel.users">
             <summary>
-            好友wxid ["wxid_aaa","wxid_bbb"]，不小于3人且包含自己
+            好友wxid ,不小于3人且包含自己
             </summary>
         </member>
         <member name="T:WebApi.Model.GroupModel">

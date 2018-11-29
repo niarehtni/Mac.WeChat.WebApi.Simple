@@ -13,6 +13,7 @@
         if ("WebSocket" in window) {
             // 打开一个 web socket
             //扫码登录
+            console.log(uuid);
             var ws = new WebSocket("ws://" + host + "/?action=scan&uuid=" + uuid);
             //62登录
             //var username = '';
@@ -20,8 +21,10 @@
             //var str62 = ''
             //var ws = new WebSocket("ws://" + host + "/?action=62&uuid=" + uuid + "&username=" + username + "&password=" + password + "&str62=" + str62);
             ws.onopen = function () {
+                heartCheck.start();
             };
             ws.onmessage = function (evt) {
+                heartCheck.reset();
                 var msg = JSON.parse( evt.data);
                 switch (msg.action) {
                     case "log"://log信息
@@ -36,19 +39,51 @@
                         break;
                     case "getgzh"://获取公众号信息。会多次传输
                         break;
-                    case "msgcallback":
+                    case "msgcallback"://微信消息回调事件
                         break;
                 }
             };
+            ws.onerror = function (evt) {
+                console.log(evt);
+                wsOpen();
+            };
             ws.onclose = function () {
-                // 关闭 websocket
-
+                // 断线重连
+                wsOpen();
             };
         }
         else {
             // 浏览器不支持 WebSocket
         }
 
+        //重连
+        function wsOpen() {
+            ws = new WebSocket("ws://" + host + "/?action=reconnect&uuid=" + uuid);
+        }
+
+        //websocket心跳
+        var heartCheck = {
+            timeout: 60000, //60ms
+            timeoutObj: null,
+            serverTimeoutObj: null,
+            reset: function () {
+                clearTimeout(this.timeoutObj);
+                clearTimeout(this.serverTimeoutObj);
+                this.start();
+            },
+            start: function () {
+                var self = this;
+                this.timeoutObj = setTimeout(function () {
+                    try {
+                        ws.send("HeartBeat");
+                    } catch (e) {
+                        wsOpen();
+                    }
+                }, this.timeout)
+            },
+        }
+
+        //生成uuid
         function uuid() {
             var s = [];
             var hexDigits = "0123456789abcdef";
@@ -63,10 +98,11 @@
             return uuid;
         }
 
+        //测试接口
         function test() {
-            $.post("http://" + apihost + "/api/wechat/msg/sendtext",
+            $.post("http://" + apihost + "/api/msg/sendtext",
                 {
-                    "wxid": "xuzeyu91",
+                    "wxid": "xuzeyu91",//传入好友微信ID
                     "text": "1111",
                     "uuid": uuid
                 },
